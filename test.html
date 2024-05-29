@@ -1,0 +1,23 @@
+<header>
+  <nav>
+    <a href=""></a>
+  </nav>
+</header>
+
+
+<iframe style="border: none; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;ctz=Europe%2FPrague&amp;bgcolor=%23ffffff&amp;showTz=0&amp;showNav=0&amp;showPrint=0&amp;src=NTIyOTA3MDYyYTI0ODkzNWU4ODgyMGZhZDJlODlmOTEyZTZkZGE4YmU5ZDAxYzdlYzRkMzExMTA5NTE0ZmNiMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23FFFFFF" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.10/iframeResizer.min.js"></script>
+<div style="width:100%; min-height:500px">
+<iframe id="hectic-form" allowtransparency="true" style="padding: 0px; margin: 0px; border: 0; max-width: 100%; min-width: 100%"></iframe>
+</div>
+<script type="text/javascript">
+let hecticFrame = document.getElementById("hectic-form");
+hecticFrame.src = 'https://hello.withmoxie.com/01/michal-koula-solutions/new-form?inFrame=true&sourceUrl=' + encodeURIComponent(window.location.href)
+setTimeout(() => iFrameResize({heightCalculationMethod: 'min', sizeWidth: true, sizeHeight: true, log: false, checkOrigin: false}, '#hectic-form'),100);
+</script>
+<style>
+  .view-container-border {
+    background-color: white !important;
+  }
+
+</style>

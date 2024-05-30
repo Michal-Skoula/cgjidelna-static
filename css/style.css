@@ -1,3 +1,32 @@
+:root {
+  /* Colors */
+  --clr-background: #1D1D1D;
+  --clr-primary: #3C72FF;
+  --clr-white: #FFFFFF;
+  --clr-grey: #323232;
+  --clr-darkergrey: #282828;
+  --clr-lightrgrey: #AAAAAA;
+
+  --clr-review-great: #29C54B;
+  --clr-review-good: #4BB57B;
+  --clr-review-mixed: #D9EE55;
+  --clr-revire-bad: #D24F4F;
+  
+  /* Text Sizes */
+  --h1:    20px;
+  --p:     16px; 
+  --small: 14px;
+
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 body {
   background-color: #1e1e1e;
   color: white;
@@ -5,4 +34,94 @@ body {
 }
 a {
   color: aqua;
+}
+button {
+  border: none;
+  background-color: inherit;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+main {
+  position: relative;
+  height: 1500px;
+}
+.food-feed {
+  padding: 200px 16px 0 16px;
+}
+
+.header {
+  padding:16px 16px;
+  background-color: var(--clr-darkergrey);
+  position: fixed;
+  width: 100%;
+}
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-content: center;
+} 
+.header button > img {
+  min-height: 35px;
+}
+.header h1 {
+  margin-top:4px;
+}
+
+.search {
+
+  transition: background-color 150ms;
+}
+.search .input {
+  display: flex;
+  flex-direction: row;
+  padding:12px 24px;
+  justify-content: space-between;
+  align-content: center;
+  background-color: var(--clr-grey);
+  margin: 24px 16px;
+  border-radius: 100px;
+}
+.search input {
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  color: var(--clr-white);
+  transition: background-color 150ms;
+}
+.search input::placeholder {
+  font-size: var(--p);
+  color: var(--clr-lightrgrey);
+}
+.search:has(input:focus) {
+  background-color: var(--clr-darkergrey);
+}
+.search input:focus {
+  outline: none;
+}
+
+.food-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-grey);
+  border-radius: 16px;
+}
+.food-item > img {
+  border-radius: 16px 16px 0 0;
+}
+.food-item-description {
+  padding:16px;
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+}
+.food-item .metrics {
+  display: flex;
+  flex-direction: row;
+}
+.food-item .metric {
+  display: flex;
+  flex-direction: row;
+  gap:4px;
 }

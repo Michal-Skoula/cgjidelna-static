@@ -6,4 +6,8 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 define('TITLE', 'Jídelna aplikace');
 define('BASE_URL', '/jidelna-rating');
-define('SQL_CONNECTION', mysqli_connect('localhost','root','','jidelna-app') or die("Failed to connect to database: " . mysqli_connect_error()));
+
+$connection = new mysqli('localhost','root','','jidelna-app');
+if($connection->connect_error) {
+  die('Couldnt connect to database: ' . $connection->connect_error);
+}

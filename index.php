@@ -1,4 +1,4 @@
-<?php require 'inc/header.php'; ?>
+<?php require 'inc/header.php';?>
 
 <h1>Form</h1>
 <form method="POST" action="signup.php">
@@ -10,6 +10,13 @@
   <input id="password" name="password" type="password" placeholder="Password" required>
   <button id="submit" type="submit">Sign up!</button>
 </form>
+<input type="file">
 
 <?php require 'inc/footer.php'; ?>
+
+<?php
+$query = "SELECT `USERNAME` FROM `users`";
+$result = $connection->query($query);
+print_r($result->fetch_all());
+?>
 <!--  -->

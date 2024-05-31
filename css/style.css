@@ -33,9 +33,8 @@ body {
   background-color: #1e1e1e;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-}
-a {
-  color: aqua;
+  display: grid;
+  grid-template-columns: 300px 1fr;
 }
 button {
   border: none;
@@ -71,6 +70,9 @@ h2 {
   gap:8px;
 }
 
+.side-nav {
+  background-color: var(--clr-darkergrey);
+}
 .food-feed {
   padding: 200px 16px 0 16px;
 }
@@ -80,12 +82,15 @@ h2 {
   background-color: var(--clr-darkergrey);
   position: fixed;
   width: 100%;
+  z-index: 100;
 }
 .header nav {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-content: center;
+  max-width: 100%;
+  width: 100%;
 } 
 .header button > img {
   min-height: 35px;
@@ -105,12 +110,15 @@ h2 {
   background-color: var(--clr-grey);
   border-radius: 100px;
   width: 100%;
-  margin:32px 0 16px 0;
+  margin:32px auto 16px auto;
+  max-width: 700px;
+  
 }
 .search input {
   background-color: inherit;
   border: none;
   width: 100%;
+  max-width: 100%;
   color: var(--clr-white);
   transition: background-color 150ms;
 }
@@ -130,10 +138,11 @@ h2 {
 }
 .food-feed {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   /* grid-template-columns: repeat(auto-fill); */
-  gap:16px;
+  gap:24px;
   align-content: center;
+  width: 100%;
 } 
 .food-item {
   display: flex;
@@ -141,28 +150,37 @@ h2 {
   background-color: var(--clr-grey);
   border-radius: 16px;
   margin-bottom:32px;
-  max-width: 400px;
   overflow: hidden;
+  margin:0 auto;
+  width: 100%;
 }
 .food-item .image-container {
   overflow: hidden;
 }
 .food-item .image-container img {
   border-radius: 16px 16px 0 0;
-  transition: transform 150ms;
+  transition: transform 250ms ease-in-out;
   /* aspect-ratio: 16/9; */
   width: 100%;
   height: 100%;
   cursor: pointer;
 }
 .food-item  .image-container a:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .food-item-description {
   padding:24px 16px;
   display: flex;
   flex-direction: column;
   gap:12px;
+}
+.food-item-description a {
+  color:var(--clr-white);
+  text-decoration: none;
+  transition: opacity 150ms;
+}
+.food-item-description a:hover {
+  opacity: 0.8;
 }
 .food-item-description img {
   width: 17px;

@@ -6,6 +6,7 @@
   --clr-grey: #323232;
   --clr-darkergrey: #282828;
   --clr-lightrgrey: #AAAAAA;
+  --clr-selected: #3f3f3f;
 
   --clr-review-great: #29C54B;
   --clr-review-good: #4BB57B;
@@ -28,13 +29,14 @@
   box-sizing: border-box;
 }
 
-
+h1 {
+  font-size: var(--h1);
+  text-align: center;
+}
 body {
   background-color: #1e1e1e;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  display: grid;
-  grid-template-columns: 300px 1fr;
 }
 button {
   border: none;
@@ -44,14 +46,20 @@ button {
   cursor: pointer;
 }
 main {
-  position: relative;
-  height: 1500px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-top:120px;
 }
 h2 {
   font-size: var(--p);
   font-weight: 500;
 }
-
+a {
+  font-size: var(--p);
+  color: var(--clr-white);
+  text-decoration: underline;
+}
 .great {
   color: var(--clr-review-great);
 }
@@ -72,10 +80,33 @@ h2 {
 
 .side-nav {
   background-color: var(--clr-darkergrey);
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  position: fixed;
+  top:0;
+  padding-top:100px;
+  height: 100svh;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 200ms ease-in-out, opacity 400ms;
+  transform: translateX(-30vw);
 }
-.food-feed {
-  padding: 200px 16px 0 16px;
+.side-nav .links {
+  display: flex;
+  flex-direction: column;
+  gap:16px;
 }
+.open {
+  opacity: 1 !important;
+  pointer-events: all !important;
+  transform: translateX(0);
+  transition: transform 200ms ease-in-out;
+}
+
 
 .header {
   padding:16px 16px;
@@ -95,11 +126,11 @@ h2 {
 .header button > img {
   min-height: 35px;
 }
-.header h1 {
-  margin-top:4px;
-}
+
 .search {
   transition: background-color 150ms;
+  min-width: 50vw;
+  max-width: 700px;
 }
 .search .input {
   display: flex;
@@ -110,11 +141,9 @@ h2 {
   background-color: var(--clr-grey);
   border-radius: 100px;
   width: 100%;
-  margin:32px auto 16px auto;
-  max-width: 700px;
-  
+  transition: background-color 150ms;
 }
-.search input {
+.input input {
   background-color: inherit;
   border: none;
   width: 100%;
@@ -126,8 +155,8 @@ h2 {
   font-size: var(--p);
   color: var(--clr-lightrgrey);
 }
-.search:has(input:focus) {
-  background-color: var(--clr-darkergrey);
+.input:has(input:focus) {
+  background-color: var(--clr-selected);
 }
 .search input:focus {
   outline: none;
@@ -139,9 +168,9 @@ h2 {
 .food-feed {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  /* grid-template-columns: repeat(auto-fill); */
   gap:24px;
   align-content: center;
+  padding: 0 16px 0 16px;
   width: 100%;
 } 
 .food-item {

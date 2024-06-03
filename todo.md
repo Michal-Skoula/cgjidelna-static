@@ -1,0 +1,4 @@
+ - [ ] Log of all events [Link](https://stackoverflow.com/questions/1900411/php-logging-all-events-of-an-application-scripted-in-php)
+ - [ ] Add food form
+ - [ ] Add review form
+ - [ ] Editing: works by populating all fields with the current values which you can then change, could also only populate the ones you opted NOT to change

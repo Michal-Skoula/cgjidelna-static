@@ -421,3 +421,6 @@ form.form {
 .review-text {
   margin-top:8px;
 }
+input[type=number] {
+  appearance: textfield;
+}

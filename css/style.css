@@ -3,6 +3,7 @@
   --clr-background: #1D1D1D;
   --clr-primary: #3C72FF;
   --clr-white: #FFFFFF;
+  --color-offwhite: #dfdfdf;
   --clr-grey: #323232;
   --clr-darkergrey: #282828;
   --clr-lightrgrey: #AAAAAA;
@@ -68,16 +69,21 @@ a {
   color: var(--clr-white);
   text-decoration: underline;
 }
-.great {
+p {
+  line-height: 22px;
+  letter-spacing: 0.2px;
+  color: var(--color-offwhite);
+}
+.great.great {
   color: var(--clr-review-great);
 }
-.good {
+.good.good {
   color: var(--clr-review-good)
 }
-.mixed {
+.mixed.mixed {
   color: var(--clr-review-mixed)
 }
-.bad {
+.bad.bad {
   color: var(--clr-review-bad);
 }
 .flex-row {
@@ -309,7 +315,7 @@ a {
   gap:4px;
   justify-content:center;
 }
-.allergies {
+.allergies p {
   color: var(--clr-allergies);
 }
 

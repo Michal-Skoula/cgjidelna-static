@@ -78,54 +78,30 @@
         <p class="">Made by <a href="https://michalskoula.com">Michal Škoula</a></p>
       </div>
     </div>
-
-
-    <div class="showcase max-width">
-      <img src="assets/food-placeholder.png" alt="name_of_food_item">
-      <h1>Tlamoun nilský na zeleném lůžku</h1>
-      <div class="metrics flex-row">
-        <div class="metric score flex-row">
-          <img class="icon" src="assets/ico-review-great.svg" alt="Score: Great">
-          <p class="great">89%</p>
+    <div class="max-width side-page">
+      <h1>Přidat novou recenzi</h1>
+      <form class="form" action="">
+        <div class="form">
+          <label for="score">Hodnocení</label>
+          <input min="0" max="100" required placeholder="0 - 100" type="number" id="score" name="score">
+          <label for="review">Text Recenze</label>
+          <input placeholder="Krátký popis dojmů" required type="text" id="review" name="review">
+          <!-- TODO: Add alergens -->
         </div>
-        <div class="metric reviews flex-row">
-          <img class="icon" src="assets/ico-reviews.svg" alt="Review">
-          <p>10 recenzí</p>
-        </div>
-        <div class="metric allergies flex-row">
-          <img class="icon" src="assets/ico-allergies.svg" alt="Allergen">
-          <p>2 alergeny</p>
-        </div>
-      </div>
-      <div class="flex-row-space-between">
-        <h2 class="review-title">Recenze (3)</h2>
-        <a href="new-review-form.html">Přidat vlastní recenzi</a>
-      </div>
-      
-      <article class="user-review">
-        <div class="flex-row">
-          <h2>Michal Škoula</h2>
-          <h2>
-            <div class="metric score">
-              <img class="icon" src="assets/ico-review-great.svg" alt="Score: Great">
-              <p class="great">89%</p>
-            </div>
-          </h2>
-        </div>
-        <p class="review-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam eget nisl. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Mauris metus.</p>
-      </article>
-      <article class="user-review">
-        <div class="flex-row">
-          <h2>Karel Novák</h2>
-          <h2>
-            <div class="metric score">
-              <img class="icon" src="assets/ico-review-great.svg" alt="Score: Great">
-              <p class="great">89%</p>
-            </div>
-          </h2>
-        </div>
-        <p class="review-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam eget nisl. In laoreet, magna id viverra tincidunt, sem odio bibendum justo, vel imperdiet sapien wisi sed libero. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Mauris metus.</p>
-      </article>
+        <button type="submit">Přidat jídlo</button>
+        
+      </form>
     </div>
+    
+<!-- 
+Name
+Image
+Description
 
+Item
+Review
+Comment
 
+Edit: works by adding the current values into the fields and you can just change it and resend the form
+U
+ -->
